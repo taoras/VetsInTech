@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework2</title>
+<style>
+ #window1 {
+  border: 10px solid;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+overflow: auto;   
+ }
+
+#window2 {
+  border: 10px solid;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+overflow: hidden;
+
+
+}
+
+#slider {
+display: flex;
+transform: translateX(-000px);
+animation: oscillate 10s infinite;
+animation-direction: alternate-reverse;
+animation-timing-function: ease-in-out;
+
+}
+img {
+  width: 400px;
+  height: 200px;
+}
+@keyframes oscillate {
+0% {
+  transform: translateX(-0px);
+}
+33% {
+  transform: translateX(-400px);
+}
+66% {
+  transform: translateX(-800px);
+}
+100% {
+  transform: translateX(-1200px);
+}
+}
+
+
+</style>
+
+  </head>
+  <body>
+    <h1> Carousel Homework2 </h1>
+
+    <!---display flex on window then window becomes block element and immediate children becom flex items the window becfomes the container-->
+    <div id="window1">
+        <img src="./images/pic1.jpg" alt="">
+        <img src="./images/pic2.jpg" alt="">
+        <img src="./images/pic3.jpg" alt="">
+        <img src="./images/pic4.jpg" alt="">
+        <img src="./images/pic5.jpg" alt="">
+    </div>
+    <div id="window2">
+      <!--display flex items-->
+      <div id="slider">
+        <img src="./images/pic1.jpg" alt="">
+        <img src="./images/pic2.jpg" alt="">
+        <img src="./images/pic3.jpg" alt="">
+        <img src="./images/pic4.jpg" alt="">
+        <img src="./images/pic5.jpg" alt="">
+                
+
+      </div>
+
+    </div>
+    <script>
+        let position = 0;
+ //add carousel slider in JavaScript
+ let slider = document.getElementById(`window1`);
+
+//Translate Slider by the width (400px) of the image
+
+slider.style.transform = `translateX(${position}px)`;
+position += 400;
+
+</script>
+
+
+
+  </body>
+</html>
